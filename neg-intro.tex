@@ -1,0 +1,98 @@
+\documentclass{svjour3}                     % onecolumn (standard format)
+%\documentclass[smallcondensed]{svjour3}     % onecolumn (ditto)
+% \documentclass[smallextended]{svjour3}       % onecolumn (second format)
+%\documentclass[twocolumn]{svjour3}          % twocolumn
+%
+\smartqed  % flush right qed marks, e.g. at end of proof
+%
+\usepackage{graphicx}
+\usepackage{hyperref}
+\journalname{Empirical Software Engineering}
+%
+\begin{document}
+
+\title{Forward to the Special Issue on Negative Results in Software Engineering}
+
+\author{Richard Paige     \and
+       Jordi Cabot \and
+       Neil A. Ernst
+}
+
+%\authorrunning{Short form of author list} % if too long for running head
+
+\institute{F. Author \at
+              first address \\
+              Tel.: +123-45-678910\\
+              Fax: +123-45-678910\\
+              \email{fauthor@example.com}           %  \\
+%             \emph{Present address:} of F. Author  %  if needed
+           \and
+           S. Author \at
+              second address
+}
+
+\date{Received: date / Accepted: date}
+% The correct dates will be entered by the editor
+\maketitle
+
+
+Welcome to this special issue on Negative Results in Software Engineering. First, what do we mean by negative results? Negative or null results---that is, results which fail to show an effect---are all too uncommon in the published literature for many reasons, including publication bias and self-selection effects. Such results are nevertheless important in showing the research directions that did not pay off. In particular, ``replication cannot be meaningful without the potential acknowledgment of failed replications" \cite{LAEW,FH}.
+
+\noindent\textbf{Negative Results in Software Engineering}
+We believe negative results are especially important in software engineering, in order to firmly embrace the nature of experimentation in software research, just like most of us believe industry should do. This means scientific inquiry that is conducted along Lean Startup (\cite{ries}) principles: start small, use validated learning and be prepared to `pivot', or change course, if the learning outcome was negative. In this context, negative results are, given their methodology, failed approaches that are just as useful as successful approaches: they point out what hasn't worked, in order to redirect our collective scientific efforts. As Walter Tichy writes in \cite{tichy}, ``Negative results, if trustworthy, are extremely important for narrowing down the search space. They eliminate useless hypotheses and thus reorient and speed up the search for better approaches."
+
+The software industry has long had a strong belief in the power of intuition: that productivity can vary by 10x among programmers; that problems found doing requirements analysis cost dramatically less to fix than code bugs, among many others (see Glass \cite{glass} and Bossavit \cite{bossavit} for more details on this folklore). Part of our job as researchers must be to give good empirical weight for, or against, commonly held beliefs. Negative results are an important part of this discussion.
+
+\noindent\textbf{Lack of Negative Results }
+Publication of negative results is rare, even more so in software engineering where, in contrast to life sciences, there are no specific tracks or journals to present such results. Data that led to negative results in software engineering is very rarely shared. Even open datasets are uncommon in software engineering, despite early efforts such as the PROMISE repository (\url{http://openscience.us/repo/}). Many researchers remain reliant on single sources like Github for a limited set of artefacts (predominantly code). By contrast, other fields in computing emphasise, as a community effort, the production and maintenance of open datasets, e.g., in machine learning (see, for example, the UCI machine learning repository at \url{https://archive.ics.uci.edu/ml/}). It seems that the software engineering community needs to consider developing a culture that accepts negative results as something that is as important to share as novel inventions.
+
+How does this influence the papers we targeted for this issue? First and foremost, each of the papers selected adheres to the highest standards of the journal.
+Our view is that published negative results cannot sacrifice empirical rigor. A negative result due primarily to misaligned expectations or due to lack of statistical power (small samples) is not a negative results, rather a poorly designed experiment. The negative result should be a result of a lack of effect, not lack of methodological rigour.
+
+Indeed, negative results often come \emph{because} the investigation is so well conducted. For instance, insisting on sufficient power for an experiment (for example, by choosing larger numbers of subjects) can mean that the noisy result that confirmed your suspicions when N=10 (a `positive' result) disappears when N=100, simply because there is always a random chance you will reject the null despite the true effect not existing. Statistician Andrew Gelman compares this to trying to measure the weight of a feather with a bathroom scale, and the feather is in the pouch of a jumping kangaroo \cite{gelman}.
+
+\noindent\textbf{Summary of Papers} The six papers presented in this special issue cover a wide array of software engineering topics, and tend to tackle problems for which experimental approaches are more applicable. The topics range from experiments related to logging, the validity of metrics, and sentiment analysis through to productivity analysis, effort estimation and revisiting the fragile base class problem. We do not have any submissions reporting negative results using qualitative research approaches; we think this is partly because there is no such thing in a qualitative framework (vs. the erroneous but often-used ``p $<$ 0.5" approach, where a `negative' result is when p $>$ 0.05, which is not at all what p-values are telling you). The papers are as follows:
+
+On Negative Results when Using Sentiment Analysis Tools for Software Engineering Research
+Serebrenik
+Sentiment analysis
+Empirical Evaluation of the Effects of Experience on Code Quality and Programmer Productivity: An Exploratory Study
+Dieste
+Productivity
+On the Correlation between Size and Metric Validity
+Gil
+Metrics
+Fragile Base-class Problem, Problem?
+Sabané
+OO
+Negative Results for Software Effort Estimation
+Menzies
+Effort estimation
+To Log, or Not To Log: Using Heuristics to Identify Mandatory Log Events - A Controlled Experiment
+King
+Logging
+
+Finally, we would like to acknowledge the rigor and dedication of the many reviewers of this special issue. One observation that we would make as editors of this special issue is that reviewing negative results is hard: not only are negative results papers different from the norm, they require a different way of thinking and critiquing. In many cases, reviewing the papers was a collaborative effort between reviewer and editor, to try to ensure that the negative result was as clearly expressed as possible. We thank our open-minded reviewers for their support in this. We are also thankful to the Empirical Software Engineering Editors in Chief, Lionel Briand and Thomas Zimmermann, for their support, help and patience throughout the process of preparing this special issue.
+
+\begin{thebibliography}{}
+
+\bibitem{tichy} Tichy, Walter F., ``Hints for Reviewing Empirical Work in Software Engineering", Empirical Software Engineering, 5, 309--312 (2000).
+
+\bibitem{glass} Glass, Robert L., ``Facts and fallacies of software engineering", Addison-Wesley (2012).
+
+\bibitem{bossavit} Bossavit, Laurent, ``The Leprechauns of Software Engineering: How folklore turns into fact and what to do about it", LeanPub (2015).
+
+\bibitem{ries} Ries, Eric, ``The Lean Startup", Crown Publishing Group (2014).
+
+\bibitem{gelman} Andrew Gelman and J. Carlin. ``Beyond power calculations: Assessing type S (sign) and type M (magnitude) errors". Perspectives on Psychological Science, 9:641–651, (2014)
+
+% \bibitem{prasad} Prasad Patil, Roger D. Peng, and Jeffrey T. Leek, ``What Should Researchers Expect When They Replicate Studies? A Statistical View of Replicability in Psychological Science", Perspectives on Psychological Science 11(4) 539-544
+
+\bibitem{LAEW} Jonathan Lung, Jorge Aranda, Steve M. Easterbrook, Gregory V. Wilson: ``On the difficulty of replicating human subjects studies in software engineering". International Conference on Software Engineering, 191--200 (2008)
+
+\bibitem{FH} Ferguson, Christopher and Moritz Heene, ``A Vast Graveyard of Undead Theories: Publication Bias and Psychological Science's Aversion to the Null",  Perspectives on Psychological Science, 7(6) pp. 555-561 doi: 10.1177/1745691612459059 (2012)
+\end{thebibliography}
+
+\end{document}
+% end of file template.tex
+

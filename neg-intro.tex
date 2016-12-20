@@ -6,6 +6,7 @@
 \smartqed  % flush right qed marks, e.g. at end of proof
 %
 \usepackage{graphicx}
+\usepackage{todonotes}
 \usepackage{hyperref}
 \journalname{Empirical Software Engineering}
 %
@@ -36,10 +37,10 @@
 \maketitle
 
 
-Welcome to this special issue on Negative Results in Software Engineering. First, what do we mean by negative results? Negative or null results---that is, results which fail to show an effect---are all too uncommon in the published literature for many reasons, including publication bias and self-selection effects. Such results are nevertheless important in showing the research directions that did not pay off. In particular, ``replication cannot be meaningful without the potential acknowledgment of failed replications" \cite{LAEW,FH}.
+Welcome to this special issue on Negative Results in Software Engineering. First, what do we mean by negative results? Negative or null results---that is, results which fail to show an effect---are all too uncommon in the published literature for many reasons, including publication bias and self-selection effects. Such results are nevertheless important in showing the research directions that did not pay off. In particular, ``replication cannot be meaningful without the potential acknowledgment of failed replications" \cite{FH}. %LAEW
 
 \noindent\textbf{Negative Results in Software Engineering}
-We believe negative results are especially important in software engineering, in order to firmly embrace the nature of experimentation in software research, just like most of us believe industry should do. This means scientific inquiry that is conducted along Lean Startup (\cite{ries}) principles: start small, use validated learning and be prepared to `pivot', or change course, if the learning outcome was negative. In this context, negative results are, given their methodology, failed approaches that are just as useful as successful approaches: they point out what hasn't worked, in order to redirect our collective scientific efforts. As Walter Tichy writes in \cite{tichy}, ``Negative results, if trustworthy, are extremely important for narrowing down the search space. They eliminate useless hypotheses and thus reorient and speed up the search for better approaches."
+We believe negative results are especially important in software engineering, in order to firmly embrace the nature of experimentation in software research, just like most of us believe industry should do. This means scientific inquiry that is conducted along Lean Startup \cite{ries} principles: start small, use validated learning and be prepared to `pivot', or change course, if the learning outcome was negative. In this context, negative results are, given their methodology, failed approaches that are just as useful as successful approaches: they point out what hasn't worked, in order to redirect our collective scientific efforts. As Walter Tichy writes in \cite{tichy}, ``Negative results, if trustworthy, are extremely important for narrowing down the search space. They eliminate useless hypotheses and thus reorient and speed up the search for better approaches."
 
 The software industry has long had a strong belief in the power of intuition: that productivity can vary by 10x among programmers; that problems found doing requirements analysis cost dramatically less to fix than code bugs, among many others (see Glass \cite{glass} and Bossavit \cite{bossavit} for more details on this folklore). Part of our job as researchers must be to give good empirical weight for, or against, commonly held beliefs. Negative results are an important part of this discussion.
 
@@ -53,44 +54,47 @@ Indeed, negative results often come \emph{because} the investigation is so well 
 
 \noindent\textbf{Summary of Papers} The six papers presented in this special issue cover a wide array of software engineering topics, and tend to tackle problems for which experimental approaches are more applicable. The topics range from experiments related to logging, the validity of metrics, and sentiment analysis through to productivity analysis, effort estimation and revisiting the fragile base class problem. We do not have any submissions reporting negative results using qualitative research approaches; we think this is partly because there is no such thing in a qualitative framework (vs. the erroneous but often-used ``p $<$ 0.5" approach, where a `negative' result is when p $>$ 0.05, which is not at all what p-values are telling you). The papers are as follows:
 
-On Negative Results when Using Sentiment Analysis Tools for Software Engineering Research
-Serebrenik
-Sentiment analysis
-Empirical Evaluation of the Effects of Experience on Code Quality and Programmer Productivity: An Exploratory Study
-Dieste
-Productivity
-On the Correlation between Size and Metric Validity
-Gil
-Metrics
-Fragile Base-class Problem, Problem?
-Sabané
-OO
-Negative Results for Software Effort Estimation
-Menzies
-Effort estimation
-To Log, or Not To Log: Using Heuristics to Identify Mandatory Log Events - A Controlled Experiment
-King
-Logging
+The first paper in this special issue, titled
+``Empirical Evaluation of the Effects of Experience on Code Quality and Programmer Productivity: An Exploratory Study", by Dieste et al., examines the claim that expertise improves code quality and programming productivity. The authors conducted  an experimental task with both industry and academia (students), focusing on an Iterative Test-Last assignment (developing tests and production code in parallel). They measured the experience of each subject, and assessed their performance on the task. Their results show that there is no evidence that experience is a significant factor in either quality or productivity. The article can be found at
+% issue details
 
-Finally, we would like to acknowledge the rigor and dedication of the many reviewers of this special issue. One observation that we would make as editors of this special issue is that reviewing negative results is hard: not only are negative results papers different from the norm, they require a different way of thinking and critiquing. In many cases, reviewing the papers was a collaborative effort between reviewer and editor, to try to ensure that the negative result was as clearly expressed as possible. We thank our open-minded reviewers for their support in this. We are also thankful to the Empirical Software Engineering Editors in Chief, Lionel Briand and Thomas Zimmermann, for their support, help and patience throughout the process of preparing this special issue.
+Serebrenik et al. then consider what sentiment analysis tools are bringing to software engineering research, in ``On Negative Results when Using Sentiment Analysis Tools for Software Engineering Research". Sentiment analysis tools claim to measure the positive (e.g., ``great code") or negative opinions (e.g., ``this code is not very good") expressed in text corpora. Since researchers are now using these tools to evaluate software artefacts, e.g. in discussions of pull requests for Github, the authors conducted an experiment to understand how well these tools worked, and whether they matched what developers actually thought of the artefact. They conclude that a) tools only weakly agree with each other, and b) replicating existing studies using these tools was highly sensitive to the choice of the tool used.
+
+In ``On the Correlation between Size and Metric Validity", Gil and Lalouche investigate the correlation between software metrics and code size (as measured in Source Lines of Code (SLOC)). Given the importance of software metrics in the field,  and in a nice example of replications providing multiple data points, similar studies were conducted earlier (see \cite{shepperd,herraiz}. This study adds more project data, but also examines the impact of both size and a given metric on external features, such as quality. They conclude that ``one has to either decouple the metrics from size or show that the external features themselves are not correlated with size'', since there is a strong correlation between metric and size.
+
+Sabané et al., in ``Fragile Base-class Problem, Problem?",
+
+Our fifth paper,
+``Negative Results for Software Effort Estimation", by Menzies et al.,
+
+Finally, in
+``To Log, or Not To Log: Using Heuristics to Identify Mandatory Log Events - A Controlled Experiment", King et al.
+
+We would like to acknowledge the rigour and dedication of the many reviewers of this special issue. One observation that we would make as editors of this special issue is that reviewing negative results is hard: not only are negative results papers different from the norm, they require a different way of thinking and critiquing. In many cases, reviewing the papers was a collaborative effort between reviewer and editor, to try to ensure that the negative result was as clearly expressed as possible. We thank our open-minded reviewers for their support in this. We are also thankful to the Empirical Software Engineering Editors in Chief, Lionel Briand and Thomas Zimmermann, for their support, help and patience throughout the process of preparing this special issue.
 
 \begin{thebibliography}{}
 
-\bibitem{tichy} Tichy, Walter F., ``Hints for Reviewing Empirical Work in Software Engineering", Empirical Software Engineering, 5, 309--312 (2000).
-
-\bibitem{glass} Glass, Robert L., ``Facts and fallacies of software engineering", Addison-Wesley (2012).
-
 \bibitem{bossavit} Bossavit, Laurent, ``The Leprechauns of Software Engineering: How folklore turns into fact and what to do about it", LeanPub (2015).
 
-\bibitem{ries} Ries, Eric, ``The Lean Startup", Crown Publishing Group (2014).
+\bibitem{FH} Ferguson, Christopher and Moritz Heene, ``A Vast Graveyard of Undead Theories: Publication Bias and Psychological Science's Aversion to the Null",  Perspectives on Psychological Science, 7(6) pp. 555-561 doi: 10.1177/1745691612459059 (2012)
 
 \bibitem{gelman} Andrew Gelman and J. Carlin. ``Beyond power calculations: Assessing type S (sign) and type M (magnitude) errors". Perspectives on Psychological Science, 9:641–651, (2014)
 
+\bibitem{glass} Glass, Robert L., ``Facts and fallacies of software engineering", Addison-Wesley (2012).
+
+\bibitem{herraiz} Herraiz, I., Gonzalez-Barahona, J.M., Robles, G.: Towards a theoretical model for software growth. In: Proceedings of the
+Fourth International Workshop on Mining Software Repositories,  (2007)
+
 % \bibitem{prasad} Prasad Patil, Roger D. Peng, and Jeffrey T. Leek, ``What Should Researchers Expect When They Replicate Studies? A Statistical View of Replicability in Psychological Science", Perspectives on Psychological Science 11(4) 539-544
 
-\bibitem{LAEW} Jonathan Lung, Jorge Aranda, Steve M. Easterbrook, Gregory V. Wilson: ``On the difficulty of replicating human subjects studies in software engineering". International Conference on Software Engineering, 191--200 (2008)
+% \bibitem{LAEW} Jonathan Lung, Jorge Aranda, Steve M. Easterbrook, Gregory V. Wilson: ``On the difficulty of replicating human subjects studies in software engineering". International Conference on Software Engineering, 191--200 (2008)
 
-\bibitem{FH} Ferguson, Christopher and Moritz Heene, ``A Vast Graveyard of Undead Theories: Publication Bias and Psychological Science's Aversion to the Null",  Perspectives on Psychological Science, 7(6) pp. 555-561 doi: 10.1177/1745691612459059 (2012)
+\bibitem{ries} Ries, Eric, ``The Lean Startup", Crown Publishing Group (2014).
+
+\bibitem{shepperd} Shepperd, M.: A critique of cyclomatic complexity as a software metric. Software Engineering Journal 3(2), 30–36 (1988)
+
+\bibitem{tichy} Tichy, Walter F., ``Hints for Reviewing Empirical Work in Software Engineering", Empirical Software Engineering, 5, 309--312 (2000).
+
 \end{thebibliography}
 
 \end{document}
